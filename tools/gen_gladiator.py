@@ -13,6 +13,7 @@ PALETTES = {
     "Iron":    ["#38383D", "#18181A", RED, BONE],
     "Bone":    [BONE, "#CBC6BE", RED, INK],
     "Ember":   [RED, INK, "#4A0610", BONE],
+    "Snow":    ["#FAFAF8", "#E4E1DC", INK, RED],
 }
 BGS = {
     "Dark":  dict(bg=(17, 17, 19), vign=(0, 0, 0), shadow=0.6),
@@ -189,6 +190,8 @@ def render(job):
 
 if __name__ == "__main__":
     jobs = [(m, p, b, f) for f in FORMATS for b in BGS for m in MOTIFS for p in PALETTES]
+    if len(sys.argv) > 1 and sys.argv[1] == "only":
+        jobs = [j for j in jobs if j[1] == sys.argv[2]]
     if len(sys.argv) > 1 and sys.argv[1] == "test":
         jobs = [j for j in jobs if j[1] in ("Crimson",) and j[3] != "Ultrawide"]
     with Pool(os.cpu_count()) as pool:

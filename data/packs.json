@@ -67,6 +67,15 @@
       "#4A0610",
       "#F2EFE9"
      ]
+    },
+    {
+     "id": "Snow",
+     "colors": [
+      "#FAFAF8",
+      "#E4E1DC",
+      "#151517",
+      "#D3122B"
+     ]
     }
    ],
    "backgrounds": [
@@ -102,20 +111,20 @@
      "fits": "iPhone и Android"
     }
    ],
-   "count": 96,
-   "designs": 32,
+   "count": 120,
+   "designs": 40,
    "bundles": {
     "desktop": {
-     "size": 45739889
+     "size": 56625695
     },
     "ultrawide": {
-     "size": 59742635
+     "size": 73985630
     },
     "mobile": {
-     "size": 22137517
+     "size": 27352521
     },
     "all": {
-     "size": 127620041
+     "size": 157963846
     }
    }
   },
