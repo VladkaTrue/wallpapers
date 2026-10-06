@@ -1,0 +1,164 @@
+{
+ "downloadBase": "https://github.com/VladkaTrue/wallpapers/releases/download/",
+ "packs": [
+  {
+   "id": "strata",
+   "name": "STRATA",
+   "version": "v1",
+   "date": "2026-10-06",
+   "description": "Слои геометрии: круги, капсулы и скруглённые треугольники с мягкими градиентами и тенями. Один мотив можно поставить на монитор, ноутбук и телефон, и сетап будет смотреться цельно.",
+   "prefix": "STRATA",
+   "featured": {
+    "motif": "Blend",
+    "palette": "Sunset",
+    "bg": "Dark"
+   },
+   "motifs": [
+    {
+     "id": "Orbit",
+     "note": "каскад кругов"
+    },
+    {
+     "id": "Pills",
+     "note": "диагональные капсулы"
+    },
+    {
+     "id": "Prism",
+     "note": "скруглённые треугольники"
+    },
+    {
+     "id": "Blend",
+     "note": "всё вместе"
+    }
+   ],
+   "palettes": [
+    {
+     "id": "Sunset",
+     "colors": [
+      "#FF5E3A",
+      "#FFB347",
+      "#E8336D",
+      "#7A1FA2"
+     ]
+    },
+    {
+     "id": "Ocean",
+     "colors": [
+      "#023E8A",
+      "#0096C7",
+      "#48CAE4",
+      "#ADE8F4"
+     ]
+    },
+    {
+     "id": "Aurora",
+     "colors": [
+      "#5A189A",
+      "#2EC4B6",
+      "#9EF01A",
+      "#3A86FF"
+     ]
+    },
+    {
+     "id": "Berry",
+     "colors": [
+      "#590D22",
+      "#C9184A",
+      "#FF758F",
+      "#FFCCD5"
+     ]
+    },
+    {
+     "id": "Forest",
+     "colors": [
+      "#1B4332",
+      "#2D6A4F",
+      "#52B788",
+      "#D8F3DC"
+     ]
+    },
+    {
+     "id": "Citrus",
+     "colors": [
+      "#FF7B00",
+      "#FFB700",
+      "#FFEA00",
+      "#2EC4B6"
+     ]
+    },
+    {
+     "id": "Lavender",
+     "colors": [
+      "#3C096C",
+      "#7B2CBF",
+      "#C77DFF",
+      "#E0AAFF"
+     ]
+    },
+    {
+     "id": "Mono",
+     "colors": [
+      "#1C1C1E",
+      "#5A5A5E",
+      "#A1A1A6",
+      "#EDEDED"
+     ]
+    }
+   ],
+   "backgrounds": [
+    {
+     "id": "Dark",
+     "name": "Тёмный"
+    },
+    {
+     "id": "Light",
+     "name": "Светлый"
+    }
+   ],
+   "formats": [
+    {
+     "id": "desktop",
+     "dir": "Desktop 4K",
+     "name": "Рабочий стол",
+     "res": "3840 × 2160",
+     "fits": "16:9 — 1080p, 1440p, 4K, MacBook"
+    },
+    {
+     "id": "ultrawide",
+     "dir": "Ultrawide",
+     "name": "Ultrawide",
+     "res": "5120 × 2160",
+     "fits": "21:9 — 2560×1080, 3440×1440, 5K2K"
+    },
+    {
+     "id": "mobile",
+     "dir": "Mobile",
+     "name": "Телефон",
+     "res": "1290 × 2796",
+     "fits": "iPhone и Android"
+    }
+   ],
+   "count": 192,
+   "designs": 64,
+   "bundles": {
+    "desktop": {
+     "file": "STRATA_desktop.zip",
+     "size": 79219042
+    },
+    "ultrawide": {
+     "file": "STRATA_ultrawide.zip",
+     "size": 103236974
+    },
+    "mobile": {
+     "file": "STRATA_mobile.zip",
+     "size": 36455103
+    },
+    "all": {
+     "file": "STRATA_all.zip",
+     "size": 218906909
+    }
+   },
+   "release": "strata-v1"
+  }
+ ]
+}

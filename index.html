@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Обои vladislove</title>
+<meta name="description" content="Бесплатные паки обоев для монитора, ultrawide и телефона. Примерь обои на экране прямо на сайте и скачай в полном качестве.">
+<meta property="og:title" content="Обои vladislove">
+<meta property="og:description" content="Бесплатные паки обоев для монитора, ultrawide и телефона.">
+<meta property="og:image" content="packs/strata/Blend_Sunset_Dark_l.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='20' cy='18' r='11' fill='%23FFB347'/%3E%3Ccircle cx='13' cy='12' r='8' fill='%23E8336D'/%3E%3Ccircle cx='9' cy='8' r='5' fill='%237A1FA2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#DCDDDF; --panel:#ECEDEF; --ink:#1C1D21; --muted:#62656C; --line:#C4C6CA;
+  --device:#2B2C30; --device-edge:#45464B;
+  --acc:#FF5E3A; --acc2:#7A1FA2;
+  --r-sm:8px; --r-md:14px;
+  --display:"Unbounded",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1F22; --panel:#28292D; --ink:#ECECEE; --muted:#9A9CA3; --line:#3A3B40;
+  --device:#0E0E10; --device-edge:#3B3C41;
+}}
+:root[data-theme="dark"]{
+  --paper:#1E1F22; --panel:#28292D; --ink:#ECECEE; --muted:#9A9CA3; --line:#3A3B40;
+  --device:#0E0E10; --device-edge:#3B3C41;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body);transition:background .4s}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{font:600 17px/1 var(--display);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:block;width:22px;height:22px;border-radius:50%;background:conic-gradient(from 210deg,var(--acc),var(--acc2),var(--acc));transition:background .4s}
+.top nav{display:flex;gap:22px;font-weight:600;font-size:15px}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover,.top nav a[aria-current]{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);grid-template-areas:'intro stage' 'act stage';column-gap:56px;align-items:end;padding:40px 0 72px}
+.intro{grid-area:intro}.act{grid-area:act;align-self:start}.stage{grid-area:stage;align-self:center}
+.act .btn{padding:12px 18px}
+h1{font:600 clamp(36px,5vw,64px)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 22px}
+.lead{font-size:18px;color:var(--muted);max-width:30em;margin:0 0 30px}
+.stage{position:relative}
+.desk{display:flex;align-items:flex-end;gap:4%;justify-content:center}
+.monitor{flex:0 0 76%}
+.screen{position:relative;border-radius:var(--r-md);background:var(--device);padding:1.4%;box-shadow:0 30px 60px -30px rgba(0,0,0,.45),inset 0 0 0 1px var(--device-edge)}
+.screen .img{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000}
+.screen img,.phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s}
+.stand{width:22%;height:46px;margin:0 auto;background:linear-gradient(var(--device-edge),var(--device));clip-path:polygon(30% 0,70% 0,82% 100%,18% 100%)}
+.foot{width:34%;height:8px;margin:0 auto;border-radius:6px 6px 2px 2px;background:var(--device)}
+.phone{flex:0 0 20%;position:relative;aspect-ratio:9/19.5;border-radius:18% / 8.3%;background:var(--device);padding:3.5%;margin-bottom:8px;box-shadow:0 30px 50px -25px rgba(0,0,0,.5),inset 0 0 0 1px var(--device-edge)}
+.phone .img{position:relative;width:100%;height:100%;border-radius:15% / 7%;overflow:hidden;background:#000;container-type:inline-size}
+.phone .clock{position:absolute;left:0;right:0;top:13%;text-align:center;color:#fff;font:600 24cqw/1 var(--display);letter-spacing:-.02em;text-shadow:0 1px 8px rgba(0,0,0,.25);z-index:1}
+.phone .island{position:absolute;top:2.6%;left:50%;width:30%;height:3.2%;transform:translateX(-50%);background:#000;border-radius:20px;z-index:2}
+
+/* picker */
+.picker{display:grid;gap:18px;margin-top:34px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.row>span{font-size:14px;color:var(--muted);min-width:76px}
+.sw{width:34px;height:34px;border-radius:50%;border:0;padding:0;cursor:pointer;position:relative;transition:transform .15s}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-pressed="true"]::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--ink)}
+.seg{display:inline-flex;background:var(--panel);border-radius:999px;padding:4px}
+.seg button{border:0;background:none;border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:none;border-radius:999px;padding:7px 15px;font-weight:600;font-size:14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:13px 22px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;background:var(--ink);color:var(--paper)}
+.btn small{font-weight:500;opacity:.65}
+.btn.ghost{background:none;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{width:17px;height:17px;flex:none}
+.dl{display:flex;flex-wrap:wrap;gap:10px}
+.now{font-size:14px;color:var(--muted);margin:0 0 12px}
+.now b{color:var(--ink);font-weight:700}
+
+/* packs list */
+section h2{font:600 clamp(26px,3vw,36px)/1.1 var(--display);letter-spacing:-.03em;margin:0 0 28px}
+.packs{padding:24px 0 80px;border-top:1px solid var(--line)}
+.packs>h2{margin-top:48px}
+.pack{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:40px;align-items:center;text-decoration:none;background:var(--panel);border-radius:var(--r-md);padding:28px}
+.pack h3{font:700 clamp(30px,4vw,52px)/1 var(--display);letter-spacing:-.04em;margin:0 0 14px}
+.pack p{color:var(--muted);margin:0 0 20px;max-width:34em}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;margin:0 0 24px;padding:0;list-style:none}
+.facts b{font-weight:700}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border-radius:var(--r-sm);overflow:hidden}
+.mosaic img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.soon{margin-top:16px;padding:22px 28px;border:1.5px dashed var(--line);border-radius:var(--r-md);color:var(--muted)}
+
+/* pack page */
+.phead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;padding:36px 0 32px}
+.back{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;display:inline-block;margin-bottom:18px}
+.back:hover{color:var(--ink)}
+.phead h1{font-size:clamp(44px,7vw,96px);margin-bottom:14px}
+.phead p{color:var(--muted);max-width:40em;margin:0}
+.bundles{display:grid;gap:8px;min-width:280px}
+.bundles .btn{justify-content:space-between}
+.filters{position:sticky;top:0;z-index:5;background:var(--paper);display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;padding-bottom:80px}
+.card{border:0;padding:0;background:none;text-align:left;cursor:pointer}
+.card .th{position:relative;border-radius:var(--r-sm);overflow:hidden;aspect-ratio:16/9;background:var(--panel)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover img{transform:scale(1.03)}
+.card .cap{display:flex;justify-content:space-between;font-size:14px;padding:9px 2px 0}
+.card .cap span{color:var(--muted)}
+.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted)}
+
+/* dialog */
+dialog{position:fixed;border:0;padding:0;background:var(--paper);color:var(--ink);border-radius:var(--r-md);width:min(1100px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto}
+dialog::backdrop{background:rgba(10,10,12,.72);backdrop-filter:blur(4px)}
+.dlg{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;padding:60px 24px 24px}
+.dlg .big{border-radius:var(--r-sm);overflow:hidden;aspect-ratio:16/9;background:#000}
+.dlg .big img{width:100%;height:100%;object-fit:cover}
+.dlg .ph{border-radius:22px;overflow:hidden;aspect-ratio:9/19.5;background:#000;border:6px solid var(--device)}
+.dlg .ph img{width:100%;height:100%;object-fit:cover}
+.dlg-info{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.dlg-info h3{font:600 22px/1.2 var(--display);letter-spacing:-.02em;margin:0}
+.dlg-info p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:var(--panel);cursor:pointer;font-size:20px;line-height:1;z-index:2}
+.fmt{display:grid;gap:2px;font-size:13px;text-align:left}.fmt>span:last-child{opacity:.6}
+
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;grid-template-areas:'intro' 'stage' 'act';row-gap:28px;padding-top:16px}
+  .filters{position:static}
+  .pack,.phead{grid-template-columns:1fr}
+  .bundles{min-width:0}
+  .dlg{grid-template-columns:1fr}
+  .dlg .ph{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .row>span{min-width:0;width:100%}
+  .mosaic{grid-template-columns:repeat(2,1fr)}
+  .pack{padding:18px}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .card .cap{flex-direction:column;font-size:13px}
+  .filters{gap:10px}
+  .btn{padding:12px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#/"><i></i>vladislove / обои</a>
+    <nav><a href="#/" id="nav-home">Примерка</a><a href="#/packs" id="nav-packs">Все паки</a></nav>
+  </header>
+  <main id="app"></main>
+  <footer>
+    <span>Обои бесплатны для личного использования.</span>
+    <a href="https://vladislove.online">vladislove.online</a>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-label="Обои">
+  <button class="x" aria-label="Закрыть" onclick="dlg.close()">×</button>
+  <div class="dlg" id="dlg-body"></div>
+</dialog>
+
+<script>
+const ICON_DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>';
+let DB, state = {};
+const $ = s => document.querySelector(s);
+const app = $('#app'), dlg = $('#dlg');
+const mb = b => (b/1048576).toFixed(0) + ' МБ';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function fileUrl(pack, file){
+  const base = DB.downloadBase;
+  return base ? `${base}${pack.release}/${file}` : `files/${pack.id}/${file}`;
+}
+const wpFile = (p, m, pal, bg, f) => `${p.prefix}_${m}_${pal}_${bg}_${f}.jpg`;
+const thumb = (p, m, pal, bg, size) => `packs/${p.id}/${m}_${pal}_${bg}_${size}.webp`;
+const swatchBg = c => `conic-gradient(from 200deg, ${c[0]}, ${c[1]}, ${c[2]}, ${c[3]}, ${c[0]})`;
+
+function setAccent(pal){
+  document.documentElement.style.setProperty('--acc', pal.colors[0]);
+  document.documentElement.style.setProperty('--acc2', pal.colors[3]);
+}
+
+/* ---------- Примерка ---------- */
+function renderHome(){
+  const p = DB.packs[0];
+  const s = state.try ||= {...p.featured};
+  const pal = p.palettes.find(x => x.id === s.palette);
+  setAccent(pal);
+  app.innerHTML = `
+  <section class="hero">
+    <div class="intro">
+      <h1>Один фон на&nbsp;все экраны</h1>
+      <p class="lead">Бесплатные паки обоев для монитора, ultrawide и телефона. Выбери мотив и палитру и посмотри, как это будет выглядеть на твоём столе.</p>
+    </div>
+    <div class="act">
+      <p class="now">Сейчас на экранах: <b>${esc(p.name)}</b>, ${esc(s.motif)}, ${esc(s.palette)}</p>
+      <div class="dl" id="hero-dl"></div>
+    </div>
+    <div class="stage">
+      <div class="desk">
+        <div class="monitor">
+          <div class="screen"><div class="img"><img id="mon" alt="Обои на мониторе" src="${thumb(p,s.motif,s.palette,s.bg,'l')}"></div></div>
+          <div class="stand"></div><div class="foot"></div>
+        </div>
+        <div class="phone"><div class="island"></div><div class="img"><div class="clock" id="clock"></div><img id="pho" alt="Обои на телефоне" src="${thumb(p,s.motif,s.palette,s.bg,'m')}"></div></div>
+      </div>
+      <div class="picker">
+        <div class="row"><span>Палитра</span>${p.palettes.map(x => `<button class="sw" title="${x.id}" aria-label="Палитра ${x.id}" aria-pressed="${x.id===s.palette}" data-k="palette" data-v="${x.id}" style="background:${swatchBg(x.colors)}"></button>`).join('')}</div>
+        <div class="row"><span>Мотив</span><div class="chips">${p.motifs.map(x => `<button class="chip" aria-pressed="${x.id===s.motif}" data-k="motif" data-v="${x.id}" title="${esc(x.note)}">${x.id}</button>`).join('')}</div></div>
+        <div class="row"><span>Фон</span><div class="seg">${p.backgrounds.map(x => `<button aria-pressed="${x.id===s.bg}" data-k="bg" data-v="${x.id}">${x.name}</button>`).join('')}</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="packs" id="packs">${packsList()}</section>`;
+  heroDownloads(p, s);
+  tick();
+  app.querySelectorAll('.picker [data-k]').forEach(b => b.onclick = () => {
+    s[b.dataset.k] = b.dataset.v;
+    const newPal = p.palettes.find(x => x.id === s.palette);
+    setAccent(newPal);
+    swap($('#mon'), thumb(p,s.motif,s.palette,s.bg,'l'));
+    swap($('#pho'), thumb(p,s.motif,s.palette,s.bg,'m'));
+    app.querySelectorAll(`.picker [data-k="${b.dataset.k}"]`).forEach(o => o.setAttribute('aria-pressed', o === b));
+    $('.now').innerHTML = `Сейчас на экранах: <b>${esc(p.name)}</b>, ${esc(s.motif)}, ${esc(s.palette)}`;
+    heroDownloads(p, s);
+  });
+}
+function heroDownloads(p, s){
+  $('#hero-dl').innerHTML = p.formats.map((f, i) =>
+    `<a class="btn ${i ? 'ghost' : ''}" href="${fileUrl(p, wpFile(p,s.motif,s.palette,s.bg,f.id))}" download>${ICON_DL}${f.name}</a>`).join('');
+}
+function swap(img, src){
+  const pre = new Image();
+  pre.onload = () => { img.style.opacity = 0; setTimeout(() => { img.src = src; img.style.opacity = 1; }, 180); };
+  pre.src = src;
+}
+function tick(){
+  const c = $('#clock'); if (!c) return;
+  const d = new Date();
+  c.textContent = d.toLocaleTimeString('ru-RU', {hour:'2-digit', minute:'2-digit'});
+  clearTimeout(tick.t); tick.t = setTimeout(tick, 15000);
+}
+
+/* ---------- Список паков ---------- */
+function packsList(){
+  return `<h2>Паки</h2>` + DB.packs.map(p => {
+    const picks = p.palettes.slice(0, 4).map((pal, i) => p.motifs[i % p.motifs.length].id + '_' + pal.id);
+    return `<a class="pack" href="#/pack/${p.id}">
+      <div>
+        <h3>${esc(p.name)}</h3>
+        <p>${esc(p.description)}</p>
+        <ul class="facts">
+          <li><b>${p.designs}</b> дизайна</li>
+          <li><b>${p.formats.length}</b> формата</li>
+          <li><b>${p.count}</b> файла</li>
+          <li>до <b>${p.formats.map(f=>f.res).sort((a,b)=>parseInt(b)-parseInt(a))[0]}</b></li>
+        </ul>
+        <span class="btn">Открыть пак</span>
+      </div>
+      <div class="mosaic">${p.palettes.map((pal,i) => `<img loading="lazy" alt="" src="${thumb(p, p.motifs[i%p.motifs.length].id, pal.id, i%3===2?'Light':'Dark', 's')}">`).join('')}</div>
+    </a>`;
+  }).join('') + `<div class="soon">Новые паки появятся здесь. Каждый выходит сразу в трёх форматах: для монитора, ultrawide и телефона.</div>`;
+}
+function renderPacks(){
+  app.innerHTML = `<section class="packs" style="border:0">${packsList()}</section>`;
+}
+
+/* ---------- Страница пака ---------- */
+function renderPack(id){
+  const p = DB.packs.find(x => x.id === id);
+  if (!p) { app.innerHTML = `<p class="empty">Такого пака нет. <a href="#/packs">Посмотреть все паки</a></p>`; return; }
+  const f = state['f_'+id] ||= {bg: 'Dark', palette: 'all', motif: 'all'};
+  setAccent(p.palettes[0]);
+  const bundles = [{k:'all', name:'Весь пак'}].concat(p.formats.map(x => ({k:x.id, name:x.name})));
+  app.innerHTML = `
+  <div class="phead">
+    <div>
+      <a class="back" href="#/packs">Все паки</a>
+      <h1>${esc(p.name)}</h1>
+      <p>${esc(p.description)}</p>
+    </div>
+    <div class="bundles">${bundles.map((b,i) => `<a class="btn ${i?'ghost':''}" href="${fileUrl(p, p.bundles[b.k].file)}" download><span style="display:flex;gap:10px;align-items:center">${ICON_DL}${b.name}</span><small>${mb(p.bundles[b.k].size)}</small></a>`).join('')}</div>
+  </div>
+  <div class="filters">
+    <div class="seg">${p.backgrounds.map(x => `<button aria-pressed="${x.id===f.bg}" data-k="bg" data-v="${x.id}">${x.name}</button>`).join('')}</div>
+    <div class="chips">${[{id:'all'}].concat(p.motifs).map(x => `<button class="chip" aria-pressed="${x.id===f.motif}" data-k="motif" data-v="${x.id}">${x.id==='all'?'Все мотивы':x.id}</button>`).join('')}</div>
+    <div class="row" style="gap:8px">${p.palettes.map(x => `<button class="sw" style="width:28px;height:28px;background:${swatchBg(x.colors)}" title="${x.id}" aria-label="Палитра ${x.id}" aria-pressed="${x.id===f.palette}" data-k="palette" data-v="${x.id}"></button>`).join('')}</div>
+  </div>
+  <div class="grid" id="grid"></div>`;
+  const draw = () => {
+    const items = [];
+    p.motifs.forEach(m => p.palettes.forEach(pal => {
+      if ((f.motif==='all'||f.motif===m.id) && (f.palette==='all'||f.palette===pal.id)) items.push([m.id, pal.id]);
+    }));
+    $('#grid').innerHTML = items.map(([m,pal]) => `<button class="card" data-m="${m}" data-p="${pal}">
+      <div class="th"><img loading="lazy" alt="${m} ${pal}" src="${thumb(p,m,pal,f.bg,'s')}"></div>
+      <div class="cap"><b>${m}</b><span>${pal}</span></div></button>`).join('') || `<p class="empty">Под этот фильтр ничего нет.</p>`;
+    $('#grid').querySelectorAll('.card').forEach(c => c.onclick = () => openDesign(p, c.dataset.m, c.dataset.p, f.bg));
+  };
+  app.querySelectorAll('.filters [data-k]').forEach(b => b.onclick = () => {
+    const k = b.dataset.k;
+    f[k] = (k !== 'bg' && f[k] === b.dataset.v) ? 'all' : b.dataset.v;
+    app.querySelectorAll(`.filters [data-k="${k}"]`).forEach(o => o.setAttribute('aria-pressed', o.dataset.v === f[k]));
+    if (k === 'palette') setAccent(p.palettes.find(x => x.id === f.palette) || p.palettes[0]);
+    draw();
+  });
+  draw();
+}
+
+function openDesign(p, m, pal, bg){
+  $('#dlg-body').innerHTML = `
+    <div class="big"><img alt="${m} ${pal}" src="${thumb(p,m,pal,bg,'l')}"></div>
+    <div class="ph"><img alt="" src="${thumb(p,m,pal,bg,'m')}"></div>
+    <div class="dlg-info">
+      <div><h3>${esc(p.name)} ${m}, ${pal}</h3><p>${p.motifs.find(x=>x.id===m).note}, ${p.backgrounds.find(x=>x.id===bg).name.toLowerCase()} фон</p></div>
+      <div class="dl">${p.formats.map((f,i) => `<a class="btn ${i?'ghost':''}" href="${fileUrl(p, wpFile(p,m,pal,bg,f.id))}" download title="${f.fits}">${ICON_DL}<span class="fmt"><span style="font-weight:700;font-size:15px">${f.name}</span><span>${f.res}</span></span></a>`).join('')}</div>
+    </div>`;
+  dlg.showModal();
+}
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+/* ---------- Роутер ---------- */
+function route(){
+  const h = location.hash.replace(/^#\/?/, '');
+  if (dlg.open) dlg.close();
+  $('#nav-home').toggleAttribute('aria-current', h === '');
+  $('#nav-packs').toggleAttribute('aria-current', h.startsWith('pack'));
+  if (h.startsWith('pack/')) renderPack(h.slice(5));
+  else if (h === 'packs') renderPacks();
+  else renderHome();
+  window.scrollTo(0, 0);
+}
+fetch('data/packs.json').then(r => r.json()).then(d => { DB = d; route(); window.onhashchange = route; })
+  .catch(() => app.innerHTML = '<p class="empty">Не удалось загрузить список паков. Обнови страницу.</p>');
+</script>
+</body>
+</html>
