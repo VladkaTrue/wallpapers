@@ -294,7 +294,7 @@ function renderPack(id){
       <h1>${esc(p.name)}</h1>
       <p>${esc(p.description)}</p>
     </div>
-    <div class="bundles">${bundles.map((b,i) => `<a class="btn ${i?'ghost':''}" href="${fileUrl(p, p.bundles[b.k].file)}" download><span style="display:flex;gap:10px;align-items:center">${ICON_DL}${b.name}</span><small>${mb(p.bundles[b.k].size)}</small></a>`).join('')}</div>
+    <div class="bundles">${bundles.map((b,i) => `<button class="btn ${i?'ghost':''}" data-bundle="${b.k}"><span style="display:flex;gap:10px;align-items:center">${ICON_DL}${b.name}</span><small>${mb(p.bundles[b.k].size)}</small></button>`).join('')}</div>
   </div>
   <div class="filters">
     <div class="seg">${p.backgrounds.map(x => `<button aria-pressed="${x.id===f.bg}" data-k="bg" data-v="${x.id}">${x.name}</button>`).join('')}</div>
@@ -302,6 +302,7 @@ function renderPack(id){
     <div class="row" style="gap:8px">${p.palettes.map(x => `<button class="sw" style="width:28px;height:28px;background:${swatchBg(x.colors)}" title="${x.id}" aria-label="Палитра ${x.id}" aria-pressed="${x.id===f.palette}" data-k="palette" data-v="${x.id}"></button>`).join('')}</div>
   </div>
   <div class="grid" id="grid"></div>`;
+  app.querySelectorAll('[data-bundle]').forEach(b => b.onclick = () => buildZip(p, b.dataset.bundle, b));
   const draw = () => {
     const items = [];
     p.motifs.forEach(m => p.palettes.forEach(pal => {
@@ -320,6 +321,53 @@ function renderPack(id){
     draw();
   });
   draw();
+}
+
+/* Архив собирается в браузере из отдельных файлов */
+let zipBusy = false;
+function loadJSZip(){
+  return window.JSZip ? Promise.resolve() : new Promise((ok, err) => {
+    const sc = document.createElement('script');
+    sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+    sc.onload = ok; sc.onerror = err; document.head.appendChild(sc);
+  });
+}
+async function buildZip(p, key, btn){
+  if (zipBusy) return; zipBusy = true;
+  const label = btn.querySelector('small'), orig = label.textContent;
+  try {
+    label.textContent = 'готовлю…';
+    await loadJSZip();
+    const zip = new JSZip();
+    const fmts = key === 'all' ? p.formats : p.formats.filter(f => f.id === key);
+    const jobs = [];
+    fmts.forEach(f => p.backgrounds.forEach(bg => p.motifs.forEach(m => p.palettes.forEach(pal =>
+      jobs.push({f, bg, name: wpFile(p, m.id, pal.id, bg.id, f.id)})))));
+    let done = 0;
+    const queue = jobs.slice();
+    const worker = async () => {
+      while (queue.length) {
+        const j = queue.shift();
+        const r = await fetch(fileUrl(p, j.name));
+        if (!r.ok) throw new Error(j.name);
+        zip.file(`${j.f.name}/${j.bg.name}/${j.name}`, await r.arrayBuffer(), {binary: true});
+        label.textContent = `${Math.round(++done / jobs.length * 100)}%`;
+      }
+    };
+    await Promise.all([1,2,3,4,5,6].map(worker));
+    zip.file('README.txt', `${p.name}\n\n${p.description}\n\nФорматы:\n` + p.formats.map(f => `${f.name} — ${f.res} (${f.fits})`).join('\n') + '\n\nwp.vladislove.online\n');
+    label.textContent = 'упаковываю…';
+    const blob = await zip.generateAsync({type: 'blob', compression: 'STORE'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${p.prefix}_${key}.zip`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+    label.textContent = orig;
+  } catch (e) {
+    label.textContent = 'не вышло, ещё раз';
+    setTimeout(() => label.textContent = orig, 4000);
+  } finally { zipBusy = false; }
 }
 
 function openDesign(p, m, pal, bg){

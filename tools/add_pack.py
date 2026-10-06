@@ -7,11 +7,10 @@
 Папка пака: <format.dir>/<background>/<PREFIX>_<Motif>_<Palette>_<Background>.jpg
 Что делает:
   * превью webp -> packs/<id>/  (лежат в репозитории сайта)
-  * файлы для скачивания -> ../release/<id>/  (заливаются в GitHub Release)
-  * архивы по форматам + общий архив -> ../release/<id>/
+  * файлы для скачивания -> files/<id>/  (архивы сайт собирает в браузере)
   * добавляет/обновляет запись в data/packs.json
 """
-import json, os, sys, zipfile, shutil
+import json, os, sys, shutil
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +19,11 @@ def main(meta_path, src):
     meta = json.load(open(meta_path, encoding="utf-8"))
     pid, pre = meta["id"], meta["prefix"]
     thumbs = os.path.join(ROOT, "packs", pid)
-    rel = os.path.join(ROOT, "..", "release", pid)
+    rel = os.path.join(ROOT, "files", pid)
     shutil.rmtree(thumbs, ignore_errors=True); shutil.rmtree(rel, ignore_errors=True)
     os.makedirs(thumbs); os.makedirs(rel)
     readme = os.path.join(src, f"{pre}_README.txt")
-    zips = {f["id"]: zipfile.ZipFile(os.path.join(rel, f"{pre}_{f['id']}.zip"), "w", zipfile.ZIP_STORED) for f in meta["formats"]}
-    allz = zipfile.ZipFile(os.path.join(rel, f"{pre}_all.zip"), "w", zipfile.ZIP_STORED)
+    sizes = {f["id"]: 0 for f in meta["formats"]}
     n = 0
     for f in meta["formats"]:
         for bg in meta["backgrounds"]:
@@ -37,8 +35,7 @@ def main(meta_path, src):
                         print("нет файла:", path); continue
                     out = f"{name}_{f['id']}.jpg"
                     shutil.copy(path, os.path.join(rel, out))
-                    arc = f"{f['name']}/{bg['name']}/{out}"
-                    zips[f["id"]].write(path, arc); allz.write(path, arc); n += 1
+                    sizes[f["id"]] += os.path.getsize(path); n += 1
                     im = Image.open(path).convert("RGB")
                     key = f"{m['id']}_{p['id']}_{bg['id']}"
                     if f["id"] == "desktop":
@@ -46,20 +43,16 @@ def main(meta_path, src):
                         im.resize((1600, 900), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_l.webp"), quality=84)
                     elif f["id"] == "mobile":
                         im.resize((430, 932), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_m.webp"), quality=84)
-    for z in list(zips.values()) + [allz]:
-        if os.path.exists(readme): z.write(readme, "README.txt")
-        z.close()
-    sizes = {k: os.path.getsize(os.path.join(rel, f"{pre}_{k}.zip")) for k in list(zips) + ["all"]}
+    sizes["all"] = sum(sizes.values())
     entry = dict(meta, count=n, designs=len(meta["motifs"]) * len(meta["palettes"]) * len(meta["backgrounds"]),
-                 bundles={k: {"file": f"{pre}_{k}.zip", "size": s} for k, s in sizes.items()},
-                 release=f"{pid}-{meta['version']}")
+                 bundles={k: {"size": s} for k, s in sizes.items()})
     db_path = os.path.join(ROOT, "data", "packs.json")
     db = json.load(open(db_path, encoding="utf-8")) if os.path.exists(db_path) else {"downloadBase": "", "packs": []}
     db["packs"] = [x for x in db["packs"] if x["id"] != pid]
     db["packs"].insert(0, entry)
     db["packs"].sort(key=lambda x: x.get("date", ""), reverse=True)
     json.dump(db, open(db_path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"готово: {n} файлов, превью в packs/{pid}, раздача в release/{pid}")
+    print(f"готово: {n} файлов, превью в packs/{pid}, файлы в files/{pid}")
 
 if __name__ == "__main__":
     main(*sys.argv[1:3])

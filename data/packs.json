@@ -1,5 +1,5 @@
 {
- "downloadBase": "https://github.com/VladkaTrue/wallpapers/releases/download/",
+ "downloadBase": "",
  "packs": [
   {
    "id": "strata",
@@ -142,23 +142,18 @@
    "designs": 64,
    "bundles": {
     "desktop": {
-     "file": "STRATA_desktop.zip",
-     "size": 79219042
+     "size": 79202569
     },
     "ultrawide": {
-     "file": "STRATA_ultrawide.zip",
-     "size": 103236974
+     "size": 103222037
     },
     "mobile": {
-     "file": "STRATA_mobile.zip",
-     "size": 36455103
+     "size": 36439910
     },
     "all": {
-     "file": "STRATA_all.zip",
-     "size": 218906909
+     "size": 218864516
     }
-   },
-   "release": "strata-v1"
+   }
   }
  ]
 }
