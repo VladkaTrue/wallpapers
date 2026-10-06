@@ -1,0 +1,30 @@
+{
+  "id": "gladiator",
+  "name": "GLADIATOR",
+  "version": "v1",
+  "date": "2026-10-06T2",
+  "description": "Красный, белый и чёрный. Чешуя доспеха из гранёных ромбов, перевязь из полос, кольца арены и шевроны-клинки. Каждый дизайн есть в тёмной и светлой версии.",
+  "prefix": "GLADIATOR",
+  "featured": {"motif": "Scales", "palette": "Crimson", "bg": "Dark"},
+  "motifs": [
+    {"id": "Scales", "note": "чешуя доспеха"},
+    {"id": "Stripes", "note": "перевязь из полос"},
+    {"id": "Arena", "note": "кольца арены"},
+    {"id": "Chevron", "note": "шевроны-клинки"}
+  ],
+  "palettes": [
+    {"id": "Crimson", "colors": ["#D3122B", "#7A0915", "#F2EFE9", "#151517"]},
+    {"id": "Iron",    "colors": ["#38383D", "#18181A", "#D3122B", "#F2EFE9"]},
+    {"id": "Bone",    "colors": ["#F2EFE9", "#CBC6BE", "#D3122B", "#151517"]},
+    {"id": "Ember",   "colors": ["#D3122B", "#151517", "#4A0610", "#F2EFE9"]}
+  ],
+  "backgrounds": [
+    {"id": "Dark", "name": "Тёмный"},
+    {"id": "Light", "name": "Светлый"}
+  ],
+  "formats": [
+    {"id": "desktop",   "dir": "Desktop 4K", "name": "Рабочий стол", "res": "3840 × 2160", "fits": "16:9 — 1080p, 1440p, 4K, MacBook"},
+    {"id": "ultrawide", "dir": "Ultrawide",  "name": "Ultrawide",    "res": "5120 × 2160", "fits": "21:9 — 2560×1080, 3440×1440, 5K2K"},
+    {"id": "mobile",    "dir": "Mobile",     "name": "Телефон",      "res": "1290 × 2796", "fits": "iPhone и Android"}
+  ]
+}

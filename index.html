@@ -180,6 +180,7 @@ let DB, state = {};
 const $ = s => document.querySelector(s);
 const app = $('#app'), dlg = $('#dlg');
 const mb = b => (b/1048576).toFixed(0) + ' МБ';
+const plural = (n, one, few, many) => { const a = n % 100, b = n % 10; return (a > 10 && a < 20) ? many : b === 1 ? one : (b > 1 && b < 5) ? few : many; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function fileUrl(pack, file){
@@ -265,9 +266,9 @@ function packsList(){
         <h3>${esc(p.name)}</h3>
         <p>${esc(p.description)}</p>
         <ul class="facts">
-          <li><b>${p.designs}</b> дизайна</li>
-          <li><b>${p.formats.length}</b> формата</li>
-          <li><b>${p.count}</b> файла</li>
+          <li><b>${p.designs}</b> ${plural(p.designs,'дизайн','дизайна','дизайнов')}</li>
+          <li><b>${p.formats.length}</b> ${plural(p.formats.length,'формат','формата','форматов')}</li>
+          <li><b>${p.count}</b> ${plural(p.count,'файл','файла','файлов')}</li>
           <li>до <b>${p.formats.map(f=>f.res).sort((a,b)=>parseInt(b)-parseInt(a))[0]}</b></li>
         </ul>
         <span class="btn">Открыть пак</span>
