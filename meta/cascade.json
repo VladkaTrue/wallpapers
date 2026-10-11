@@ -1,0 +1,25 @@
+{
+  "id": "cascade",
+  "name": "CASCADE",
+  "version": "v1",
+  "date": "2026-10-11T2",
+  "description": "Ряд вытянутых полупрозрачных капсул внахлёст: цвет перетекает от светлого через акцент и растворяется в фоне, а сквозь каждую капсулу просвечивают соседние. Четыре палитры, у каждой тёмная и светлая версия.",
+  "prefix": "CASCADE",
+  "featured": {"motif": "Row", "palette": "Harbor", "bg": "Dark"},
+  "motifs": [{"id": "Row", "note": "ряд капсул"}],
+  "palettes": [
+    {"id": "Tangerine", "colors": ["#FAF3E1", "#F5E7C6", "#FF6D1F", "#222222"]},
+    {"id": "Emerald",   "colors": ["#F4F1EB", "#7AA05A", "#2D5A4A", "#0D4C3C"]},
+    {"id": "Juniper",   "colors": ["#EFE9D7", "#898861", "#7D2826", "#343723"]},
+    {"id": "Harbor",    "colors": ["#F9F9F9", "#FF6E42", "#004E72", "#092634"]}
+  ],
+  "backgrounds": [
+    {"id": "Dark", "name": "Тёмный"},
+    {"id": "Light", "name": "Светлый"}
+  ],
+  "formats": [
+    {"id": "desktop",   "dir": "Mac",       "name": "Mac",       "res": "4480 × 3088", "fits": "MacBook, iMac, Studio Display — как штатные обои macOS 27"},
+    {"id": "ultrawide", "dir": "Ultrawide", "name": "Ultrawide", "res": "5120 × 2160", "fits": "21:9 — 2560×1080, 3440×1440, 5K2K"},
+    {"id": "mobile",    "dir": "iPhone",    "name": "iPhone",    "res": "1320 × 2868", "fits": "iPhone 17 Pro Max и все модели меньше"}
+  ]
+}
