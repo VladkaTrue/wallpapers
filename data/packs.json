@@ -2,6 +2,124 @@
  "downloadBase": "",
  "packs": [
   {
+   "id": "contour",
+   "name": "CONTOUR",
+   "version": "v1",
+   "date": "2026-10-11",
+   "description": "Топографическая карта высот: тонкие изолинии, каждая четвёртая потолще, как на настоящих картах. Сделан под macOS 27 и iOS 27: размер для Mac как у штатных обоев, iPhone показывает тот же рельеф крупнее.",
+   "prefix": "CONTOUR",
+   "featured": {
+    "motif": "Highland",
+    "palette": "Graphite",
+    "bg": "Dark"
+   },
+   "motifs": [
+    {
+     "id": "Highland",
+     "note": "нагорье"
+    },
+    {
+     "id": "Valley",
+     "note": "долина"
+    },
+    {
+     "id": "Plateau",
+     "note": "плато"
+    },
+    {
+     "id": "Coast",
+     "note": "побережье"
+    }
+   ],
+   "palettes": [
+    {
+     "id": "Graphite",
+     "colors": [
+      "#0B0B0C",
+      "#6C6C70",
+      "#A4A4A9",
+      "#F2F2F0"
+     ]
+    },
+    {
+     "id": "Navy",
+     "colors": [
+      "#0A1222",
+      "#3E4F6E",
+      "#8396BA",
+      "#EEF1F6"
+     ]
+    },
+    {
+     "id": "Olive",
+     "colors": [
+      "#0E120D",
+      "#4C5946",
+      "#929F87",
+      "#F0F2EC"
+     ]
+    },
+    {
+     "id": "Clay",
+     "colors": [
+      "#150E0B",
+      "#664537",
+      "#B98068",
+      "#F5EFEB"
+     ]
+    }
+   ],
+   "backgrounds": [
+    {
+     "id": "Dark",
+     "name": "Тёмный"
+    },
+    {
+     "id": "Light",
+     "name": "Светлый"
+    }
+   ],
+   "formats": [
+    {
+     "id": "desktop",
+     "dir": "Mac",
+     "name": "Mac",
+     "res": "4480 × 3088",
+     "fits": "MacBook, iMac, Studio Display — как штатные обои macOS 27"
+    },
+    {
+     "id": "ultrawide",
+     "dir": "Ultrawide",
+     "name": "Ultrawide",
+     "res": "5120 × 2160",
+     "fits": "21:9 — 2560×1080, 3440×1440, 5K2K"
+    },
+    {
+     "id": "mobile",
+     "dir": "iPhone",
+     "name": "iPhone",
+     "res": "1320 × 2868",
+     "fits": "iPhone 17 Pro Max и все модели меньше"
+    }
+   ],
+   "count": 96,
+   "designs": 32,
+   "bundles": {
+    "desktop": {
+     "size": 43006200
+    },
+    "ultrawide": {
+     "size": 38834222
+    },
+    "mobile": {
+     "size": 12393504
+    },
+    "all": {
+     "size": 94233926
+    }
+   }
+  },
+  {
    "id": "gladiator",
    "name": "GLADIATOR",
    "version": "v1",

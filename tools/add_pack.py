@@ -11,7 +11,7 @@
   * добавляет/обновляет запись в data/packs.json
 """
 import json, os, sys, shutil
-from PIL import Image
+from PIL import Image, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,10 +39,10 @@ def main(meta_path, src):
                     im = Image.open(path).convert("RGB")
                     key = f"{m['id']}_{p['id']}_{bg['id']}"
                     if f["id"] == "desktop":
-                        im.resize((640, 360), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_s.webp"), quality=82)
-                        im.resize((1600, 900), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_l.webp"), quality=84)
+                        ImageOps.fit(im, (640, 360), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_s.webp"), quality=82)
+                        ImageOps.fit(im, (1600, 900), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_l.webp"), quality=84)
                     elif f["id"] == "mobile":
-                        im.resize((430, 932), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_m.webp"), quality=84)
+                        ImageOps.fit(im, (430, 932), Image.LANCZOS).save(os.path.join(thumbs, f"{key}_m.webp"), quality=84)
     sizes["all"] = sum(sizes.values())
     entry = dict(meta, count=n, designs=len(meta["motifs"]) * len(meta["palettes"]) * len(meta["backgrounds"]),
                  bundles={k: {"size": s} for k, s in sizes.items()})
