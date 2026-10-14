@@ -52,17 +52,39 @@ button{font:inherit;color:inherit}
 h1{font:600 clamp(36px,5vw,64px)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 22px}
 .lead{font-size:18px;color:var(--muted);max-width:30em;margin:0 0 30px}
 .stage{position:relative}
-.desk{display:flex;align-items:flex-end;gap:4%;justify-content:center}
-.monitor{flex:0 0 76%}
-.screen{position:relative;border-radius:var(--r-md);background:var(--device);padding:1.4%;box-shadow:0 30px 60px -30px rgba(0,0,0,.45),inset 0 0 0 1px var(--device-edge)}
-.screen .img{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000}
-.screen img,.phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s}
-.stand{width:22%;height:46px;margin:0 auto;background:linear-gradient(var(--device-edge),var(--device));clip-path:polygon(30% 0,70% 0,82% 100%,18% 100%)}
-.foot{width:34%;height:8px;margin:0 auto;border-radius:6px 6px 2px 2px;background:var(--device)}
-.phone{flex:0 0 20%;position:relative;aspect-ratio:9/19.5;border-radius:18% / 8.3%;background:var(--device);padding:3.5%;margin-bottom:8px;box-shadow:0 30px 50px -25px rgba(0,0,0,.5),inset 0 0 0 1px var(--device-edge)}
-.phone .img{position:relative;width:100%;height:100%;border-radius:15% / 7%;overflow:hidden;background:#000;container-type:inline-size}
-.phone .clock{position:absolute;left:0;right:0;top:13%;text-align:center;color:#fff;font:600 24cqw/1 var(--display);letter-spacing:-.02em;text-shadow:0 1px 8px rgba(0,0,0,.25);z-index:1}
-.phone .island{position:absolute;top:2.6%;left:50%;width:30%;height:3.2%;transform:translateX(-50%);background:#000;border-radius:20px;z-index:2}
+.desk{position:relative;display:flex;align-items:flex-end;justify-content:center}
+.desk .imac{width:78%}
+.desk .phone-slot{display:block;width:18%;margin-left:-5%;margin-bottom:2%;position:relative;z-index:1}
+
+/* ── iPhone 17: тонкие ровные рамки, Dynamic Island, Action + громкость слева, боковая + Camera Control справа ── */
+.iphone{--f1:#D3DEEA;--f2:#8E9FB3;position:relative;display:block;width:100%;padding:1.2%;border-radius:16.2%/7.6%;
+  background:linear-gradient(140deg,var(--f1),var(--f2) 38%,var(--f1) 62%,var(--f2));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 40px 60px -30px rgba(0,0,0,.75)}
+.iphone.black{--f1:#5A5C62;--f2:#1E1F23}
+.iphone .glass{display:block;padding:3.3%;border-radius:15.4%/7.2%;background:#050505}
+.iphone .screen{position:relative;display:block;aspect-ratio:1206/2622;border-radius:12.4%/5.7%;overflow:hidden;background:#000;container-type:inline-size}
+.iphone .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.iphone .island{position:absolute;top:1.6%;left:50%;width:31%;aspect-ratio:3.35;border-radius:999px;background:#000;transform:translateX(-50%);z-index:2}
+.iphone .clock{position:absolute;left:0;right:0;top:12%;text-align:center;color:#fff;font:600 22cqw/1 var(--display);letter-spacing:-.02em;text-shadow:0 1px 8px rgba(0,0,0,.25);z-index:1}
+.iphone .b{position:absolute;width:1.4%;border-radius:3px;background:linear-gradient(90deg,var(--f2),var(--f1))}
+.iphone .l{left:-1.1%}.iphone .r{right:-1.1%}
+.iphone .action{top:16%;height:4%}.iphone .vup{top:23.5%;height:7%}.iphone .vdn{top:32%;height:7%}
+.iphone .side{top:25%;height:10.5%}.iphone .cam{top:56%;height:5.5%;background:linear-gradient(90deg,#3c3c44,#6a6a74)}
+
+/* ── iMac 24": белая рамка, цветной «подбородок», плоская ножка-лопатка ── */
+.imac{--chin:#A9C9E6;--back:#7FA7CC;position:relative;display:block;width:100%}
+.imac .face{display:block;border-radius:3.4%/5.4%;overflow:hidden;background:var(--chin);box-shadow:0 40px 60px -36px rgba(0,0,0,.55)}
+.imac .bezel{position:relative;display:block;padding:2.1%;background:#F4F4F6}
+.imac .bezel::before{content:"";position:absolute;top:.75%;left:50%;width:.55%;aspect-ratio:1;border-radius:50%;background:#2B2B30;transform:translateX(-50%)}
+.imac .scr{position:relative;display:block;aspect-ratio:16/9;border-radius:.5%/.9%;overflow:hidden;background:#000}
+.imac .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.imac .chin{display:block;aspect-ratio:100/9.5}
+.imac .neck{display:block;width:24%;aspect-ratio:24/19;margin:0 auto;background:linear-gradient(180deg,var(--back),var(--chin) 70%);clip-path:polygon(5% 0,95% 0,100% 100%,0 100%)}
+.imac .shadow{display:block;width:34%;height:8px;margin:-4px auto 0;border-radius:50%;background:rgba(0,0,0,.22);filter:blur(4px)}
+
+.imac{--chin:color-mix(in srgb,var(--acc3,#7FA7CC) 38%,#F2F2F4);--back:color-mix(in srgb,var(--acc3,#7FA7CC) 58%,#C9CBD0)}
+.imac .chin,.imac .neck{transition:background .45s}
+.imac .scr img,.iphone .screen img{transition:opacity .45s}
 
 /* picker */
 .picker{display:grid;gap:18px;margin-top:34px}
@@ -92,6 +114,7 @@ h1{font:600 clamp(36px,5vw,64px)/1.02 var(--display);letter-spacing:-.035em;marg
 section h2{font:600 clamp(26px,3vw,36px)/1.1 var(--display);letter-spacing:-.03em;margin:0 0 28px}
 .packs{padding:24px 0 80px;border-top:1px solid var(--line)}
 .packs>h2{margin-top:48px}
+.pack-list{display:grid;gap:16px}
 .pack{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:40px;align-items:center;text-decoration:none;background:var(--panel);border-radius:var(--r-md);padding:28px}
 .pack h3{font:700 clamp(30px,4vw,52px)/1 var(--display);letter-spacing:-.04em;margin:0 0 14px}
 .pack p{color:var(--muted);margin:0 0 20px;max-width:34em}
@@ -194,6 +217,7 @@ const swatchBg = c => `conic-gradient(from 200deg, ${c[0]}, ${c[1]}, ${c[2]}, ${
 function setAccent(pal){
   document.documentElement.style.setProperty('--acc', pal.colors[0]);
   document.documentElement.style.setProperty('--acc2', pal.colors[3]);
+  document.documentElement.style.setProperty('--acc3', pal.colors[2]);
 }
 
 /* ---------- Примерка ---------- */
@@ -214,11 +238,8 @@ function renderHome(){
     </div>
     <div class="stage">
       <div class="desk">
-        <div class="monitor">
-          <div class="screen"><div class="img"><img id="mon" alt="Обои на мониторе" src="${thumb(p,s.motif,s.palette,s.bg,'l')}"></div></div>
-          <div class="stand"></div><div class="foot"></div>
-        </div>
-        <div class="phone"><div class="island"></div><div class="img"><div class="clock" id="clock"></div><img id="pho" alt="Обои на телефоне" src="${thumb(p,s.motif,s.palette,s.bg,'m')}"></div></div>
+        <span class="imac"><span class="face"><span class="bezel"><span class="scr"><img id="mon" alt="Обои на iMac" src="${thumb(p,s.motif,s.palette,s.bg,'l')}"></span></span><span class="chin"></span></span><span class="neck"></span><span class="shadow"></span></span>
+        <span class="phone-slot"><span class="iphone black"><span class="b l action"></span><span class="b l vup"></span><span class="b l vdn"></span><span class="b r side"></span><span class="b r cam"></span><span class="glass"><span class="screen"><span class="clock" id="clock"></span><img id="pho" alt="Обои на iPhone" src="${thumb(p,s.motif,s.palette,s.bg,'m')}"><span class="island"></span></span></span></span></span>
       </div>
       <div class="picker">
         <div class="row"><span>Палитра</span>${p.palettes.map(x => `<button class="sw" title="${x.id}" aria-label="Палитра ${x.id}" aria-pressed="${x.id===s.palette}" data-k="palette" data-v="${x.id}" style="background:${swatchBg(x.colors)}"></button>`).join('')}</div>
@@ -259,7 +280,7 @@ function tick(){
 
 /* ---------- Список паков ---------- */
 function packsList(){
-  return `<h2>Паки</h2>` + DB.packs.map(p => {
+  return `<h2>Паки</h2><div class="pack-list">` + DB.packs.map(p => {
     const picks = p.palettes.slice(0, 4).map((pal, i) => p.motifs[i % p.motifs.length].id + '_' + pal.id);
     return `<a class="pack" href="#/pack/${p.id}">
       <div>
@@ -275,7 +296,7 @@ function packsList(){
       </div>
       <div class="mosaic">${p.palettes.map((pal,i) => `<img loading="lazy" alt="" src="${thumb(p, p.motifs[i%p.motifs.length].id, pal.id, i%3===2?'Light':'Dark', 's')}">`).join('')}</div>
     </a>`;
-  }).join('') + `<div class="soon">Новые паки появятся здесь. Каждый выходит сразу в трёх форматах: для монитора, ultrawide и телефона.</div>`;
+  }).join('') + `</div><div class="soon">Новые паки появятся здесь. Каждый выходит сразу в трёх форматах: для монитора, ultrawide и телефона.</div>`;
 }
 function renderPacks(){
   app.innerHTML = `<section class="packs" style="border:0">${packsList()}</section>`;
