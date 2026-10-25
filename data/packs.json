@@ -2,6 +2,120 @@
  "downloadBase": "",
  "packs": [
   {
+   "id": "halves",
+   "name": "HALVES",
+   "version": "v1",
+   "date": "2026-10-25",
+   "description": "Сетка из полукругов в духе Баухауса: половинки складываются в «бантики», «D» и разрезанные круги, часть фигур полупрозрачная, между ними много воздуха. Пара акцентных кругов и «D» в цвете палитры. Три раскладки, четыре палитры, у каждой тёмная и светлая версия.",
+   "prefix": "HALVES",
+   "featured": {
+    "motif": "Rhythm",
+    "palette": "Classic",
+    "bg": "Dark"
+   },
+   "motifs": [
+    {
+     "id": "Rhythm",
+     "note": "раскладка 1"
+    },
+    {
+     "id": "Pulse",
+     "note": "раскладка 2"
+    },
+    {
+     "id": "Echo",
+     "note": "раскладка 3"
+    }
+   ],
+   "palettes": [
+    {
+     "id": "Classic",
+     "colors": [
+      "#0E0E0E",
+      "#ECE8E3",
+      "#9E9EA0",
+      "#F0582A"
+     ]
+    },
+    {
+     "id": "Harbor",
+     "colors": [
+      "#092634",
+      "#F4F4F2",
+      "#5F7B8D",
+      "#FF6E42"
+     ]
+    },
+    {
+     "id": "Emerald",
+     "colors": [
+      "#0D4C3C",
+      "#F4F1EB",
+      "#6F8E80",
+      "#9CC27A"
+     ]
+    },
+    {
+     "id": "Juniper",
+     "colors": [
+      "#2B2E1C",
+      "#EFE9D7",
+      "#898861",
+      "#C2483F"
+     ]
+    }
+   ],
+   "backgrounds": [
+    {
+     "id": "Dark",
+     "name": "Тёмный"
+    },
+    {
+     "id": "Light",
+     "name": "Светлый"
+    }
+   ],
+   "formats": [
+    {
+     "id": "desktop",
+     "dir": "Mac",
+     "name": "Mac",
+     "res": "4480 × 3088",
+     "fits": "MacBook, iMac, Studio Display — как штатные обои macOS 27"
+    },
+    {
+     "id": "ultrawide",
+     "dir": "Ultrawide",
+     "name": "Ultrawide",
+     "res": "5120 × 2160",
+     "fits": "21:9 — 2560×1080, 3440×1440, 5K2K"
+    },
+    {
+     "id": "mobile",
+     "dir": "iPhone",
+     "name": "iPhone",
+     "res": "1320 × 2868",
+     "fits": "iPhone 17 Pro Max и все модели меньше"
+    }
+   ],
+   "count": 72,
+   "designs": 24,
+   "bundles": {
+    "desktop": {
+     "size": 15071076
+    },
+    "ultrawide": {
+     "size": 13539919
+    },
+    "mobile": {
+     "size": 4781573
+    },
+    "all": {
+     "size": 33392568
+    }
+   }
+  },
+  {
    "id": "cascade",
    "name": "CASCADE",
    "version": "v1",
